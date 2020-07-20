@@ -16,6 +16,11 @@ Vue.use(VueRouter)
     component: () => import('../views/home.vue') //这种直接导入并且使用
   },
   {
+    path: '/home',     // 浏览器输入这个地址，则加载component引入的组件
+   name: 'home',
+   component: () => import('../views/home.vue')
+ },
+  {
     path: '/myself',     // 浏览器输入这个地址，则加载component引入的组件
    name: 'myself',
    component: () => import('../views/myself.vue')

@@ -7,53 +7,41 @@
 
     <div class="list">
       <a-menu v-model="current" mode="horizontal" style="line-height: 65px">
-        <ul>
-          <li>
-            <a-menu-item key="mail">
-              <a href>
-                <a-icon type="home" />首页
-              </a>
-            </a-menu-item>
-          </li>
+        <a-menu-item @click="toHome">
+          <a-icon type="home" />
+          <span>首页</span>
+        </a-menu-item>
 
-          <li>
-            <a-sub-menu>
-              <span slot="title" class="submenu-title-wrapper">
-                <a-icon type="tags" />分类
-              </span>
-              <a-menu-item-group>
-                <a-menu-item key="setting:1">
-                  <a href>文章笔记</a>
-                </a-menu-item>
-                <a-menu-item key="setting:2">
-                  <a href>音乐</a>
-                </a-menu-item>
-                <a-menu-item key="setting:2">
-                  <a href>书籍</a>
-                </a-menu-item>
-                <a-menu-item key="setting:2">
-                  <a href="s">杂谈</a>
-                </a-menu-item>
-              </a-menu-item-group>
-            </a-sub-menu>
-          </li>
-
-          <li>
-            <a-menu-item key="app">
-              <a href>
-                <a-icon type="calendar" />归档
-              </a>
+        <a-sub-menu >
+          <span slot="title" class="submenu-title-wrapper">
+            <a-icon type="tags" />
+            <span>分类</span>
+          </span>
+          <a-menu-item-group>
+            <a-menu-item @click="articles">
+              <span>文章笔记</span>
             </a-menu-item>
-          </li>
-
-          <li>
-            <a-menu-item>
-              <span @click="toMyself">
-                <a-icon type="user" />这是我
-              </span>
+            <a-menu-item @click="musics">
+              <span>音乐</span>
             </a-menu-item>
-          </li>
-        </ul>
+            <a-menu-item @click="books">
+              <span>书籍</span>
+            </a-menu-item>
+            <a-menu-item @click="others">
+              <span>杂谈</span>
+            </a-menu-item>
+          </a-menu-item-group>
+        </a-sub-menu>
+
+        <a-menu-item @click="toCalendar">
+          <a-icon type="calendar" />
+          <span>归档</span>
+        </a-menu-item>
+
+        <a-menu-item @click="toMyself">
+          <a-icon type="user" />
+          <span>这是我</span>
+        </a-menu-item>
       </a-menu>
     </div>
   </div>
@@ -69,6 +57,9 @@ export default {
     };
   },
   methods: {
+    toHome() {
+      this.$router.push({ path: "/home" });
+    },
     toMyself() {
       this.$router.push({ path: "/myself" });
     }
