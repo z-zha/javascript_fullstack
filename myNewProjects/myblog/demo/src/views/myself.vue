@@ -6,7 +6,7 @@
     </div>
 
     <a-row>
-      <a-col :xs="0" :sm="0" :md="3" :lg="6" :xl="5">
+      <a-col :xs="0" :sm="0" :md="0" :lg="6" :xl="5">
         <div class="slider">
           <my-slider />
         </div>
@@ -14,7 +14,7 @@
       <!-- 侧边栏 -->
 
       <!-- 内容 -->
-      <a-col :xs="24" :sm="24" :md="21" :lg="18" :xl="19">
+      <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
           <div class="blog">
             <div class="header">
@@ -25,11 +25,12 @@
 
             <div class="web">
               <span>博客前端：</span>
-              <p>vue，vuex，vue-router</p>
+              <p>vue + vuex + vue-router + antd</p>
             </div>
+
             <div class="back">
               <span>博客后端：</span>
-              <p>vue，vuex，vue-router</p>
+              <p>koa2 + MySQL + knex.js</p>
             </div>
           </div>
 
@@ -70,33 +71,57 @@ export default {
 };
 </script>
 
-<style scoped>
-.slider {
+<style lang="less" scoped>
+/* .slider {
   float: left;
-}
-.content {
-  float: left;
+} */
+/* .content {
+  float: right;
   margin-left: 20px;
   margin-top: 20px;
+} */
+.content {
+  margin-left: 40px;
+  margin-top: 50px;
 }
 .blog {
-  height: 200px;
+  height: 150px;
+  overflow: hidden;
+  text-align: left;
 }
-.web {
-  float: left;
-}
+/*  ！important 无穷大
+    行内样式   1 0 0 0
+    id选择器   0 1 0 0
+    类名选择器  0 0 1 0
+    标签选择器  0 0 0 1
+
+    你看看权重 你# app 没有scoped（私有化）造成了样式污染，
+    # 选择器权重太高，你在后面写 类名选择器无法覆盖样式
+ */
+
 .header span {
   font-weight: bold;
+  font-size: 18px;
 }
-
+.back,.web {
+  display: flex;
+  /* flex-wrap: nowrap; */
+  span {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+/* .back span, .web span {
+  c
+} */
 /* .blog span,
 .blog p {
   float: left;
-}
-.web,
+}  */
+/* .web,
 .back {
   float: left;
-} */
+} */ 
 /* .web {
   display: table;
 } */

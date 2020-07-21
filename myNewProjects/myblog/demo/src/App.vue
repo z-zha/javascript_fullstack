@@ -5,7 +5,8 @@
 </template>
 
 <style lang="less">
-#app {
+// # 选择器权重1，0，0 后面的权重太高无法覆盖
+body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
