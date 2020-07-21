@@ -40,6 +40,33 @@
                 <span>关于我</span>
               </a-divider>
             </div>
+
+            <div class="aboutMe">
+              <a-descriptions
+                bordered="true"
+                :column="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }"
+                size="middle"
+              >
+                <a-descriptions-item label="姓名">查佳慧</a-descriptions-item>
+                <a-descriptions-item label="性别">女</a-descriptions-item>
+                <a-descriptions-item label="籍贯">江西九江</a-descriptions-item>
+                <a-descriptions-item label="出生年月">1999.12</a-descriptions-item>
+                <a-descriptions-item label="政治面貌">中共党员</a-descriptions-item>
+                <a-descriptions-item label="学校">江西财经大学</a-descriptions-item>
+                <a-descriptions-item label="学历">本科</a-descriptions-item>
+                <a-descriptions-item label="专业">2021届软件工程</a-descriptions-item>
+                <a-descriptions-item label="联系方式">187-7925-1461</a-descriptions-item>
+                <a-descriptions-item label="电子邮箱">2635067653@qq.com</a-descriptions-item>
+                <a-descriptions-item label="技术栈">
+                  技术栈
+                  <br />Database version: 3.4
+                  <br />Package: dds.mongo.mid
+                  <br />Storage space: 10 GB
+                  <br />Replication factor: 3
+                  <br />Region: East China 1
+                </a-descriptions-item>
+              </a-descriptions>
+            </div>
           </div>
         </div>
       </a-col>
@@ -103,13 +130,19 @@ export default {
   font-weight: bold;
   font-size: 18px;
 }
-.back,.web {
+.back,
+.web {
   display: flex;
   /* flex-wrap: nowrap; */
   span {
     font-weight: bold;
     font-size: 16px;
   }
+}
+.aboutMe {
+  margin-right: 300px;
+  margin-bottom: 50px;
+  // text-align: left;
 }
 /* .back span, .web span {
   c
@@ -121,7 +154,7 @@ export default {
 /* .web,
 .back {
   float: left;
-} */ 
+} */
 /* .web {
   display: table;
 } */
