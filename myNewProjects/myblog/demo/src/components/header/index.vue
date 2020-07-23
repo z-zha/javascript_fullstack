@@ -33,7 +33,7 @@
           </a-menu-item-group>
         </a-sub-menu>
 
-        <a-menu-item @click="toCalendar">
+        <a-menu-item @click="toFolder">
           <a-icon type="calendar" />
           <span>归档</span>
         </a-menu-item>

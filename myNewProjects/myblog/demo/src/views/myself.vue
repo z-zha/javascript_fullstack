@@ -42,11 +42,7 @@
             </div>
 
             <div class="aboutMe">
-              <a-descriptions
-                bordered
-                :column="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }"
-                
-              >
+              <a-descriptions bordered :column="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }">
                 <a-descriptions-item label="姓名">查佳慧</a-descriptions-item>
                 <a-descriptions-item label="性别">女</a-descriptions-item>
                 <a-descriptions-item label="籍贯">江西九江</a-descriptions-item>
@@ -58,10 +54,14 @@
                 <a-descriptions-item label="联系方式">187-7925-1461</a-descriptions-item>
                 <a-descriptions-item label="电子邮箱">2635067653@qq.com</a-descriptions-item>
                 <a-descriptions-item label="技术栈">
-                  <span>前端：HTML/CSS，JavaScript， vue，mpvue， 微信小程序</span><br />
-                  <span>后端：Koa2，egg.js，node</span><br />
-                  <span>数据库： mysql</span><br />
-                  <span>工具： git,，postman，Easy mock</span><br />
+                  <span>前端：HTML/CSS，JavaScript， vue，mpvue， 微信小程序</span>
+                  <br />
+                  <span>后端：Koa2，egg.js，node</span>
+                  <br />
+                  <span>数据库： mysql</span>
+                  <br />
+                  <span>工具： git,，postman，Easy mock</span>
+                  <br />
                 </a-descriptions-item>
               </a-descriptions>
             </div>
