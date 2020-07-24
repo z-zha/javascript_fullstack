@@ -16,7 +16,7 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          <a-list
+          <!-- <a-list
             item-layout="vertical"
             size="large"
             :pagination="pagination"
@@ -44,9 +44,10 @@
               </a-list-item-meta>
               {{ item.content }}
             </a-list-item>
-          </a-list>
+          </a-list> -->
         </div>
       </a-col>
+      
     </a-row>
     <!-- <my-articles/>
     <my-tags/>
