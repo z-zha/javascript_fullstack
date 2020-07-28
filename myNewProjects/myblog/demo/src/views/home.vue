@@ -6,7 +6,7 @@
     </div>
 
     <a-row>
-      <a-col :xs="0" :sm="0" :md="0" :lg="6" :xl="5">
+      <a-col :xs="0" :sm="0" :md="3" :lg="6" :xl="5">
         <div class="slider">
           <my-slider />
         </div>
@@ -16,11 +16,38 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          
-
-         
+          <!-- <a-list
+            item-layout="vertical"
+            size="large"
+            :pagination="pagination"
+            :data-source="listData"
+          >
+            <div slot="footer">
+              <b>ant design vue</b> footer part
+            </div>
+            <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
+              <template v-for="{ type, text } in actions" slot="actions">
+                <span :key="type">
+                  <a-icon :type="type" style="margin-right: 8px" />
+                  {{ text }}
+                </span>
+              </template>
+              <img
+                slot="extra"
+                width="272"
+                alt="logo"
+                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+              />
+              <a-list-item-meta :description="item.description">
+                <a slot="title" :href="item.href">{{ item.title }}</a>
+                <a-avatar slot="avatar" :src="item.avatar" />
+              </a-list-item-meta>
+              {{ item.content }}
+            </a-list-item>
+          </a-list> -->
         </div>
       </a-col>
+      
     </a-row>
     <!-- <my-articles/>
     <my-tags/>
@@ -35,9 +62,35 @@ import Header from "../components/header"; //导入组件 index.vue可以省略
 import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
+
+const listData = [];
+for (let i = 0; i < 23; i++) {
+  listData.push({
+    href: 'https://www.antdv.com/',
+    title: `ant design vue part ${i}`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+      'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+    content:
+      'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+  });
+}
 export default {
   data() {
-    return {};
+    return {
+      listData,
+      pagination: {
+        onChange: page => {
+          console.log(page);
+        },
+        pageSize: 3
+      },
+      actions: [
+        { type: "star-o", text: "156" },
+        { type: "like-o", text: "156" },
+        { type: "message", text: "2" }
+      ]
+    };
   },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
@@ -49,12 +102,12 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-/* .slider {
+<style scoped>
+.slider {
   float: left;
-} */
+}
 /* .content {
-  float: right;
+  float: left;
   margin-left: 20px;
   margin-top: 20px;
 } */
@@ -62,62 +115,4 @@ export default {
   margin-left: 40px;
   margin-top: 50px;
 }
-.blog {
-  height: 150px;
-  overflow: hidden;
-  text-align: left;
-}
-/*  ！important 无穷大
-    行内样式   1 0 0 0
-    id选择器   0 1 0 0
-    类名选择器  0 0 1 0
-    标签选择器  0 0 0 1
-
-    你看看权重 你# app 没有scoped（私有化）造成了样式污染，
-    # 选择器权重太高，你在后面写 类名选择器无法覆盖样式
- */
-
-.header span {
-  font-weight: bold;
-  font-size: 18px;
-}
-.back,
-.web {
-  display: flex;
-  /* flex-wrap: nowrap; */
-  span {
-    font-weight: bold;
-    font-size: 16px;
-  }
-}
-.aboutMe {
-  margin-right: 300px;
-  margin-bottom: 50px;
-  // text-align: left;
-  span {
-    line-height: 40px;
-  }
-}
-/* .back span, .web span {
-  c
-} */
-/* .blog span,
-.blog p {
-  float: left;
-}  */
-/* .web,
-.back {
-  float: left;
-} */
-/* .web {
-  display: table;
-} */
-/* .web span,
-.back span {
-  font-weight: bold;
-  font-size: 20px;
-}
-.web p .back p {
-  line-height: 29.6px;
-} */
 </style>

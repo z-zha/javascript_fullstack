@@ -1,4 +1,4 @@
-const configs = require('../../config');
+const configs = require('./config');
 
 var knex = require('knex')({
   client: 'mysql',
@@ -12,3 +12,5 @@ var knex = require('knex')({
 })
 
 module.exports = { mysql: knex }
+
+
