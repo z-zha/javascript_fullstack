@@ -15,6 +15,7 @@
 
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
+        首页
         <div class="content">
           <!-- <a-list
             item-layout="vertical"
@@ -63,35 +64,36 @@ import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
 
-const listData = [];
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'https://www.antdv.com/',
-    title: `ant design vue part ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-      'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    content:
-      'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  });
-}
+// const listData = [];
+// for (let i = 0; i < 23; i++) {
+//   listData.push({
+//     href: 'https://www.antdv.com/',
+//     title: `ant design vue part ${i}`,
+//     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+//     description:
+//       'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+//     content:
+//       'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+//   });
+// }
+
 export default {
-  data() {
-    return {
-      listData,
-      pagination: {
-        onChange: page => {
-          console.log(page);
-        },
-        pageSize: 3
-      },
-      actions: [
-        { type: "star-o", text: "156" },
-        { type: "like-o", text: "156" },
-        { type: "message", text: "2" }
-      ]
-    };
-  },
+  // data() {
+  //   return {
+  //     listData,
+  //     pagination: {
+  //       onChange: page => {
+  //         console.log(page);
+  //       },
+  //       pageSize: 3
+  //     },
+  //     actions: [
+  //       { type: "star-o", text: "156" },
+  //       { type: "like-o", text: "156" },
+  //       { type: "message", text: "2" }
+  //     ]
+  //   };
+  // },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议

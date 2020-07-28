@@ -16,8 +16,8 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          归档
-
+          
+分类
           
         </div>
       </a-col>
