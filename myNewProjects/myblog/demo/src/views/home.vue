@@ -80,6 +80,54 @@
               <a-card-meta title="Card title" description="This is the description"></a-card-meta>
             </a-card>
           </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
           
         </div>
       </a-col>

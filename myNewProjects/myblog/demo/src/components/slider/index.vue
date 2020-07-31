@@ -1,5 +1,8 @@
 <template>
+<a-affix :offset-top="top">
   <div class="content">
+    
+  
     <!-- 头像 -->
     <div class="avatar">
       <img src="../../assets/avatar.jpg" alt />
@@ -42,26 +45,44 @@
     <div class="tags">
       <a-divider orientation="left">我的标签</a-divider>
       <div class="skills">
-        
-          <a-tag color="pink">css</a-tag>
-          <a-tag color="red">Vue</a-tag>
-          <a-tag color="orange">mpvue</a-tag>
-          <a-tag color="green">微信小程序</a-tag>
-       
-        
-          <a-tag color="cyan">jQuery</a-tag>
-          <a-tag color="blue">mysql</a-tag>
-          <a-tag color="purple">Node.js</a-tag>
-          <a-tag color="#f50">美食</a-tag>
-      
-        
-          <a-tag color="#2db7f5">不吃肉不能活</a-tag>
-          <a-tag color="#87d068">无辣不欢</a-tag>
-          <a-tag color="#108ee9">火锅</a-tag>
-        
+        <a-tag color="pink">
+          <span>CSS</span>
+        </a-tag>
+        <a-tag color="red">
+          <span>Vue</span>
+        </a-tag>
+        <a-tag color="orange">
+          <span>mpvue</span>
+        </a-tag>
+        <a-tag color="cyan">
+          <span>jQuery</span>
+        </a-tag>
+        <a-tag color="green">
+          <span>微信小程序</span>
+        </a-tag>
+        <a-tag color="blue">
+          <span>mysql</span>
+        </a-tag>
+        <a-tag color="purple">
+          <span>Node.js</span>
+        </a-tag>
+        <a-tag color="#f50">
+          <span>美食</span>
+        </a-tag>
+        <a-tag color="#2db7f5">
+          <span>不吃肉不能活</span>
+        </a-tag>
+        <a-tag color="#87d068">
+          <span>无辣不欢</span>
+        </a-tag>
+        <a-tag color="#108ee9">
+          <span>火锅</span>
+        </a-tag>
       </div>
     </div>
+    
   </div>
+</a-affix>
 </template>
 
 <script>
@@ -69,10 +90,11 @@ export default {
   name: "Slider",
   data() {
     return {
-      loading: true
+      loading: true,
+      top: 100,
     };
   },
-  components: {}
+  components: {},
 };
 </script>
 
