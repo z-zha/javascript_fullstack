@@ -14,41 +14,75 @@
       <!-- 侧边栏 -->
 
       <!-- 内容 -->
-      <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
-        首页
+      <a-col :xs="24" :sm="24" :md="21" :lg="18" :xl="19">
         <div class="content">
-          <!-- <a-list
-            item-layout="vertical"
-            size="large"
-            :pagination="pagination"
-            :data-source="listData"
-          >
-            <div slot="footer">
-              <b>ant design vue</b> footer part
-            </div>
-            <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
-              <template v-for="{ type, text } in actions" slot="actions">
-                <span :key="type">
-                  <a-icon :type="type" style="margin-right: 8px" />
-                  {{ text }}
-                </span>
-              </template>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
               <img
-                slot="extra"
-                width="272"
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
               />
-              <a-list-item-meta :description="item.description">
-                <a slot="title" :href="item.href">{{ item.title }}</a>
-                <a-avatar slot="avatar" :src="item.avatar" />
-              </a-list-item-meta>
-              {{ item.content }}
-            </a-list-item>
-          </a-list> -->
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          <div class="card">
+            <a-card hoverable style="width: 300px">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+              </template>
+              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+            </a-card>
+          </div>
+          
         </div>
       </a-col>
-      
     </a-row>
     <!-- <my-articles/>
     <my-tags/>
@@ -64,43 +98,14 @@ import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
 
-// const listData = [];
-// for (let i = 0; i < 23; i++) {
-//   listData.push({
-//     href: 'https://www.antdv.com/',
-//     title: `ant design vue part ${i}`,
-//     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-//     description:
-//       'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-//     content:
-//       'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-//   });
-// }
-
 export default {
-  // data() {
-  //   return {
-  //     listData,
-  //     pagination: {
-  //       onChange: page => {
-  //         console.log(page);
-  //       },
-  //       pageSize: 3
-  //     },
-  //     actions: [
-  //       { type: "star-o", text: "156" },
-  //       { type: "like-o", text: "156" },
-  //       { type: "message", text: "2" }
-  //     ]
-  //   };
-  // },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
-    "my-slider": Slider
+    "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  }
+  },
 };
 </script>
 
@@ -116,5 +121,10 @@ export default {
 .content {
   margin-left: 40px;
   margin-top: 50px;
+}
+.card {
+  height: 350px;
+  width: 350px;
+  float: left;
 }
 </style>
