@@ -17,11 +17,28 @@
       <a-col :xs="24" :sm="24" :md="21" :lg="18" :xl="19">
         <div class="content">
           <div class="card">
+            <div v-for="(item, index) in card" :key="index">
+              <a-card hoverable style="width: 300px">
+                <img
+                  slot="cover"
+                  alt="example"
+                  src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg"
+                />
+                <template slot="actions" class="ant-card-actions">
+                  <a-icon type="like" theme="twoTone" />
+                  <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                  <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+                </template>
+                <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+              </a-card>
+            </div>
+          </div>
+          <div class="card">
             <a-card hoverable style="width: 300px">
               <img
                 slot="cover"
                 alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg"
               />
               <template slot="actions" class="ant-card-actions">
                 <a-icon type="like" theme="twoTone" />
@@ -112,23 +129,6 @@
               <a-card-meta title="Card title" description="This is the description"></a-card-meta>
             </a-card>
           </div>
-          <div class="card">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon type="like" theme="twoTone" />
-                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
-              </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-            </a-card>
-          </div>
-          
         </div>
       </a-col>
     </a-row>
@@ -147,17 +147,27 @@ import Slider from "../components/slider";
 // import Tags from "../components/tags"
 
 export default {
+  data() {
+    return {
+      card: [],
+    }
+  },
+  methods: {
+    async getData () {
+      
+    }
+  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
     "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  },
+  }
 };
 </script>
 
-<style scoped>
+<style lang='less' scoped>
 .slider {
   float: left;
 }
@@ -174,5 +184,9 @@ export default {
   height: 350px;
   width: 350px;
   float: left;
+  img {
+    width: 298px;
+    height: 180.84px;
+  }
 }
 </style>

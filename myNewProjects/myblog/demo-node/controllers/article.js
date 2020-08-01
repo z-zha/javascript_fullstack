@@ -1,12 +1,15 @@
 const { mysql } = require('../mysql')
 
-async function getArticle(ctx) {
-  const all = await mysql('article_list').select()
-  ctx.body = {
-    data: all
-  }
 
-  console.log(all)
+
+async function getArticle(ctx) {
+  const cardData = await mysql('article_list').select()
+  var dataString = JSON.stringify(cardData);
+  var card = JSON.parse(dataString);
+  ctx.body = {
+    'card': card
+  }
+  // console.log(card)
 }
 
 async function getNewestArticle(ctx) {
