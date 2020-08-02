@@ -145,6 +145,8 @@ import Header from "../components/header"; //导入组件 index.vue可以省略
 import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
+import { get } from "../utils";
+import axios from 'axios'
 
 export default {
   data() {
@@ -154,7 +156,8 @@ export default {
   },
   methods: {
     async getData () {
-      
+      const data = await get('/index')
+      this.card = data.card
     }
   },
   components: {
