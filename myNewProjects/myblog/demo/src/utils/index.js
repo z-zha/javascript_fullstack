@@ -1,4 +1,5 @@
-const host = "http://localhost:3000"    //自定义请求前缀
+import axios from 'axios' 
+const host = "http://localhost:5757"    //自定义请求前缀 ？？？5757
 
 export function get(url,params) {      //传入axios请求需要的参数
   return new Promise((resolve,reject) => {

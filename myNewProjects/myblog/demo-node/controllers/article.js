@@ -1,7 +1,5 @@
 const { mysql } = require('../mysql')
 
-
-
 async function getArticle(ctx) {
   const cardData = await mysql('article_list').select()
   var dataString = JSON.stringify(cardData);
@@ -9,7 +7,7 @@ async function getArticle(ctx) {
   ctx.body = {
     'card': card
   }
-  // console.log(card)
+  console.log(card)
 }
 
 async function getNewestArticle(ctx) {

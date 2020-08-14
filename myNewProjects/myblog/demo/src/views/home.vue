@@ -16,24 +16,22 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="21" :lg="18" :xl="19">
         <div class="content">
-          <div class="card">
-            <div v-for="(item, index) in card" :key="index">
-              <a-card hoverable style="width: 300px">
-                <img
-                  slot="cover"
-                  alt="example"
-                  src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg"
-                />
-                <template slot="actions" class="ant-card-actions">
-                  <a-icon type="like" theme="twoTone" />
-                  <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                  <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                </template>
-                <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-              </a-card>
-            </div>
+          <div class="card" v-for="(item, index) in card" :key="index">
+            <!-- <a-row>
+            <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">-->
+            <a-card hoverable :title="item.title" :bordered="true" style="font-size:14px" @click="articleList(item.id)">
+              <p>{{item.introduce}}</p>
+              <template slot="actions" class="ant-card-actions">
+                <a-icon type="like" theme="twoTone" />
+                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
+                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
+              </template>
+            </a-card>
+            <!-- </a-col>
+            </a-row>-->
           </div>
-          <div class="card">
+
+          <!-- <div class="card" v-for="(item, index) in card" :key="index">
             <a-card hoverable style="width: 300px">
               <img
                 slot="cover"
@@ -44,91 +42,23 @@
                 <a-icon type="like" theme="twoTone" />
                 <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
                 <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
               </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
+              <a-card-meta :title="item.title" :description="item.introduce"></a-card-meta>
             </a-card>
-          </div>
-          <div class="card">
+          </div>-->
+          <!-- <div class="card" v-for="(item,index) in card" :key="index">
             <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
+              <img slot="cover" alt="example" src="item[index].url" />
               <template slot="actions" class="ant-card-actions">
                 <a-icon type="like" theme="twoTone" />
                 <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
                 <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
+                
               </template>
               <a-card-meta title="Card title" description="This is the description"></a-card-meta>
             </a-card>
-          </div>
-          <div class="card">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon type="like" theme="twoTone" />
-                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
-              </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-            </a-card>
-          </div>
-          <div class="card">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon type="like" theme="twoTone" />
-                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
-              </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-            </a-card>
-          </div>
-          <div class="card">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon type="like" theme="twoTone" />
-                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
-              </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-            </a-card>
-          </div>
-          <div class="card">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon type="like" theme="twoTone" />
-                <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
-                <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
-                <!-- <a-icon key="ellipsis" type="ellipsis" /> -->
-              </template>
-              <a-card-meta title="Card title" description="This is the description"></a-card-meta>
-            </a-card>
-          </div>
+          </div>-->
+          <!-- 你这里这么card嘛？ -->
         </div>
       </a-col>
     </a-row>
@@ -146,19 +76,31 @@ import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
 import { get } from "../utils";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
     return {
-      card: [],
-    }
-  },
-  methods: {
-    async getData () {
-      const data = await get('/index')
-      this.card = data.card
-    }
+      card: [
+        // {
+        //   url:
+        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
+        // },
+        // {
+        //   url:
+        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
+        // },
+        // {
+        //   url:
+        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
+        // },
+      ],
+      action: [
+        { type: 'star-o', text: '156' },
+        { type: 'like-o', text: '156' },
+        { type: 'message', text: '2' },
+      ]
+    };
   },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
@@ -166,7 +108,26 @@ export default {
     "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  }
+  },
+  mounted() {
+    this.http();
+    this.getData();
+  },
+  methods: {
+    http() {
+      get("/getarticle").then((res) => {
+        console.log(res);
+      });
+    },
+
+    async getData() {
+      const data = await get("/getarticle");
+      console.log(1);
+      console.log(data);
+      console.log(222);
+      this.card = data.card;
+    },
+  },
 };
 </script>
 
@@ -182,14 +143,10 @@ export default {
 .content {
   margin-left: 40px;
   margin-top: 50px;
+  text-align: left;
 }
 .card {
-  height: 350px;
-  width: 350px;
-  float: left;
-  img {
-    width: 298px;
-    height: 180.84px;
-  }
+  width: 880px;
+  height: 280px;
 }
 </style>
