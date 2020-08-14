@@ -19,7 +19,12 @@
           <div class="card" v-for="(item, index) in card" :key="index">
             <!-- <a-row>
             <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">-->
-            <a-card hoverable :title="item.title" :bordered="true" style="font-size:14px" @click="articleList(item.id)">
+            <a-card
+              hoverable
+              :title="item.title"
+              :bordered="true"
+              @click="articleDetail(item.id)"
+            >
               <p>{{item.introduce}}</p>
               <template slot="actions" class="ant-card-actions">
                 <a-icon type="like" theme="twoTone" />
@@ -81,25 +86,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      card: [
-        // {
-        //   url:
-        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
-        // },
-        // {
-        //   url:
-        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
-        // },
-        // {
-        //   url:
-        //     "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2868187029,2635725758&fm=26&gp=0.jpg",
-        // },
-      ],
-      action: [
-        { type: 'star-o', text: '156' },
-        { type: 'like-o', text: '156' },
-        { type: 'message', text: '2' },
-      ]
+      card: [],
     };
   },
   components: {
@@ -119,13 +106,21 @@ export default {
         console.log(res);
       });
     },
-
     async getData() {
       const data = await get("/getarticle");
       console.log(1);
       console.log(data);
       console.log(222);
       this.card = data.card;
+    },
+    articleDetail(id) {
+      this.$router.push({
+        name: "articleDetail",
+        params: {
+          id: id,
+        },
+        // path: "/articleDetail?id=" + id,
+      });
     },
   },
 };

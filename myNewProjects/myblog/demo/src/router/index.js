@@ -34,6 +34,11 @@ const routes = [
     path: '/myself',     // 浏览器输入这个地址，则加载component引入的组件
     name: 'myself',
     component: () => import('../views/myself.vue')
+  },
+  {
+    path: '/articleDetail',     // 浏览器输入这个地址，则加载component引入的组件
+    name: 'articleDetail',
+    component: () => import('../views/articleDetail.vue')
   }
 ]
 
