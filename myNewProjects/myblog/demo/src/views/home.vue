@@ -108,9 +108,9 @@ export default {
     },
     async getData() {
       const data = await get("/getarticle");
-      console.log(1);
-      console.log(data);
-      console.log(222);
+      // console.log(1);
+      // console.log(data);
+      // console.log(222);
       this.card = data.card;
     },
     articleDetail(id) {

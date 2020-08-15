@@ -44,9 +44,16 @@ export default {
     // "my-tags": Tags
   },
   mounted() {
+    // this.http();
     this.getData();
   },
   methods: {
+    http() {
+      get("/getArticleById").then((res) => {
+        console.log(res);
+        console.log(1)
+      });
+    },
     async getData() {
       const data = await get("/getArticleById");
       // console.log(aaa);
