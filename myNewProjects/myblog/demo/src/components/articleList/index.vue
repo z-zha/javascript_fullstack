@@ -23,12 +23,47 @@
 </template>
 
 <script>
+import { get } from "../utils";
+import axios from "axios";
+
 export default {
   name: "ArticleList",
   data() {
     return {
       loading: true,
+      card:[]
     };
+  },
+  mounted() {
+    this.http();
+    this.getData();
+  },
+  methods: {
+    http() {
+      get("/getarticle").then((res) => {
+        console.log(res);
+      });
+    },
+    async getData() {
+      const data = await get("/getarticle");
+      // console.log(1);
+      // console.log(data);
+      // console.log(222);
+      this.card = data.data;
+    },
+    articleDetail(id) {
+      this.$router.push({
+        path: "/ariticleDetail",
+        query: {
+          content: id
+        }
+        // name: "articleDetail",
+        // params: {
+        //   id: id,
+        // },
+        // path: "/articleDetail?id=" + id,
+      });
+    },
   },
 };
 </script>

@@ -70,11 +70,6 @@
         <!-- </div> -->
       </a-col>
     </a-row>
-    <!-- <my-articles/>
-    <my-tags/>
-    <div class="title">
-      aaahahahhah
-    </div>-->
   </div>
 </template>
 
