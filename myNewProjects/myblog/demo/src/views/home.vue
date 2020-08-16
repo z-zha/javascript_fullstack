@@ -16,14 +16,17 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="21" :lg="18" :xl="19">
         <div class="content">
+          <my-articleList />
+        </div>
+        <!-- <div class="content">
           <div class="card" v-for="(item, index) in card" :key="index">
-            <!-- <a-row>
-            <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">-->
+            <a-row>
+            <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">
             <a-card
               hoverable
               :title="item.title"
               :bordered="true"
-              @click="articleDetail(item.id)"
+              @click="articleDetail(item.article_id)"
             >
               <p>{{item.introduce}}</p>
               <template slot="actions" class="ant-card-actions">
@@ -32,9 +35,9 @@
                 <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
               </template>
             </a-card>
-            <!-- </a-col>
-            </a-row>-->
-          </div>
+            </a-col>
+            </a-row>
+          </div> -->
 
           <!-- <div class="card" v-for="(item, index) in card" :key="index">
             <a-card hoverable style="width: 300px">
@@ -63,8 +66,8 @@
               <a-card-meta title="Card title" description="This is the description"></a-card-meta>
             </a-card>
           </div>-->
-          <!-- 你这里这么card嘛？ -->
-        </div>
+
+        <!-- </div> -->
       </a-col>
     </a-row>
     <!-- <my-articles/>
@@ -78,8 +81,7 @@
 <script>
 import Header from "../components/header"; //导入组件 index.vue可以省略
 import Slider from "../components/slider";
-// import Articles from "../components/articles"
-// import Tags from "../components/tags"
+import ArticleList from "../components/articleList";
 import { get } from "../utils";
 import axios from "axios";
 
@@ -93,8 +95,7 @@ export default {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
     "my-slider": Slider,
-    // "my-articles": Articles,
-    // "my-tags": Tags
+    "my-articleList": ArticleList
   },
   mounted() {
     this.http();
@@ -111,14 +112,18 @@ export default {
       // console.log(1);
       // console.log(data);
       // console.log(222);
-      this.card = data.card;
+      this.card = data.data;
     },
     articleDetail(id) {
       this.$router.push({
-        name: "articleDetail",
-        params: {
-          id: id,
-        },
+        path: "/ariticleDetail",
+        query: {
+          content: id
+        }
+        // name: "articleDetail",
+        // params: {
+        //   id: id,
+        // },
         // path: "/articleDetail?id=" + id,
       });
     },

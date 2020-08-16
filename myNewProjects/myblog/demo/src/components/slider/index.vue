@@ -1,8 +1,6 @@
 <template>
 <a-affix :offset-top="top">
   <div class="content">
-    
-  
     <!-- 头像 -->
     <div class="avatar">
       <img src="../../assets/avatar.jpg" alt />

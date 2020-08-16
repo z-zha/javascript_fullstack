@@ -39,12 +39,12 @@ export default {
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
-    "my-slider": Slider,
+    "my-slider": Slider
     // "my-articles": Articles,
     // "my-tags": Tags
   },
   mounted() {
-    // this.http();
+    this.http();
     this.getData();
   },
   methods: {
