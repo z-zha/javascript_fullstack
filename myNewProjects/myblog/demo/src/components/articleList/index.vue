@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div>
     <div class="card" v-for="(item, index) in card" :key="index">
       <a-row>
         <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { get } from "../utils";
+import { get } from "../../utils";
 import axios from "axios";
 
 export default {
@@ -31,19 +31,19 @@ export default {
   data() {
     return {
       loading: true,
-      card:[]
+      card: [],
     };
   },
   mounted() {
-    this.http();
+    // this.http();
     this.getData();
   },
   methods: {
-    http() {
-      get("/getarticle").then((res) => {
-        console.log(res);
-      });
-    },
+    // http() {
+    //   get("/getarticle").then((res) => {
+    //     console.log(res);
+    //   });
+    // },
     async getData() {
       const data = await get("/getarticle");
       // console.log(1);
@@ -55,8 +55,8 @@ export default {
       this.$router.push({
         path: "/ariticleDetail",
         query: {
-          content: id
-        }
+          content: id,
+        },
         // name: "articleDetail",
         // params: {
         //   id: id,
