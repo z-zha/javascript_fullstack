@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="card" v-for="(item, index) in card" :key="index">
+    <!-- <div class="card" v-for="(item, index) in card" :key="index"> -->
+    <div class="card" v-for="(item, index) in $store.state.articles" :key="index">
       <a-row>
         <a-col :xs="16" :sm="18" :md="20" :lg="24" :xl="24">
           <a-card
@@ -44,13 +45,13 @@ export default {
     //     console.log(res);
     //   });
     // },
-    async getData() {
-      const data = await get("/getarticle");
-      // console.log(1);
-      // console.log(data);
-      // console.log(222);
-      this.card = data.data;
-    },
+    // async getData() {
+    //   const data = await get("/getarticle");
+    //   // console.log(1);
+    //   // console.log(data);
+    //   // console.log(222);
+    //   this.card = data.data;
+    // },
     articleDetail(id) {
       this.$router.push({
         path: "/ariticleDetail",

@@ -33,7 +33,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      card: [],
+      loading: true
     };
   },
   components: {
@@ -43,36 +43,43 @@ export default {
     "my-articleList": ArticleList
   },
   mounted() {
-    this.http();
+  //   this.http();
     this.getData();
   },
   methods: {
-    http() {
-      get("/getarticle").then((res) => {
+  //   http() {
+  //     get("/getarticle").then((res) => {
+  //       console.log(res);
+  //     });
+  //   },
+    getData() {
+       get("/getarticle")
+       .then((res) => {
         console.log(res);
+        const data = res.data;
+        this.$store.state.articles = data;
+        this.lodaing = false;
       });
-    },
-    async getData() {
-      const data = await get("/getarticle");
+      // const data = await get("/getarticle");
       // console.log(1);
       // console.log(data);
       // console.log(222);
-      this.card = data.data;
+      // this.card = data.data;
     },
-    articleDetail(id) {
-      this.$router.push({
-        path: "/ariticleDetail",
-        query: {
-          content: id
-        }
+    // articleDetail(id) {
+    //   this.$router.push({
+    //     path: "/ariticleDetail",
+    //     query: {
+    //       content: id
+    //     }
         // name: "articleDetail",
         // params: {
         //   id: id,
         // },
         // path: "/articleDetail?id=" + id,
-      });
+      // });
     },
-  },
+  // },
 };
 </script>
 
