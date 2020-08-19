@@ -145,26 +145,4 @@ export default {
     line-height: 40px;
   }
 }
-/* .back span, .web span {
-  c
-} */
-/* .blog span,
-.blog p {
-  float: left;
-}  */
-/* .web,
-.back {
-  float: left;
-} */
-/* .web {
-  display: table;
-} */
-/* .web span,
-.back span {
-  font-weight: bold;
-  font-size: 20px;
-}
-.web p .back p {
-  line-height: 29.6px;
-} */
 </style>

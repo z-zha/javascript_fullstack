@@ -43,15 +43,9 @@ export default {
     "my-articleList": ArticleList
   },
   mounted() {
-  //   this.http();
     this.getData();
   },
   methods: {
-  //   http() {
-  //     get("/getarticle").then((res) => {
-  //       console.log(res);
-  //     });
-  //   },
     getData() {
        get("/getarticle")
        .then((res) => {
@@ -60,11 +54,6 @@ export default {
         this.$store.state.articles = data;
         this.lodaing = false;
       });
-      // const data = await get("/getarticle");
-      // console.log(1);
-      // console.log(data);
-      // console.log(222);
-      // this.card = data.data;
     },
     // articleDetail(id) {
     //   this.$router.push({

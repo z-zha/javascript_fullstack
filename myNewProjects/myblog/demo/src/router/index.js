@@ -15,30 +15,29 @@ const routes = [
     name: 'index',
     component: () => import('../views/home.vue') //这种直接导入并且使用
   },
-  // {
-  //   path: '/home',     // 浏览器输入这个地址，则加载component引入的组件
-  //   name: 'home',
-  //   component: () => import('../views/home.vue')
-  // },
   {
     path: '/category',     // 浏览器输入这个地址，则加载component引入的组件
     name: 'category',
     component: () => import('../views/category.vue')
   },
   {
-    path: '/folder',     // 浏览器输入这个地址，则加载component引入的组件
+    path: '/folder',
     name: 'folder',
     component: () => import('../views/folder.vue')
   },
   {
-    path: '/myself',     // 浏览器输入这个地址，则加载component引入的组件
+    path: '/myself',
     name: 'myself',
     component: () => import('../views/myself.vue')
   },
   {
-    path: '/articleDetail',     // 浏览器输入这个地址，则加载component引入的组件
+    path: '/articleDetail',
     name: 'articleDetail',
     component: () => import('../views/articleDetail.vue')
+  },
+  {
+    path: '*',     //当没有路由匹配时，匹配* 重定向至首页
+    redirect: '/'
   }
 ]
 

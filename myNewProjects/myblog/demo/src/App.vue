@@ -10,9 +10,7 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  // text-align: center;  //这个作用于全局了
+  // color: #2c3e50;
 }
-
-
 </style>

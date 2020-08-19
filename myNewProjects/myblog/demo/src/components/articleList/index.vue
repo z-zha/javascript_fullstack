@@ -32,12 +32,12 @@ export default {
   data() {
     return {
       loading: true,
-      card: [],
+      // card: [],
     };
   },
   mounted() {
     // this.http();
-    this.getData();
+    // this.getData();
   },
   methods: {
     // http() {
@@ -54,7 +54,7 @@ export default {
     // },
     articleDetail(id) {
       this.$router.push({
-        path: "/ariticleDetail",
+        path: "/articleDetail",
         query: {
           content: id,
         },
