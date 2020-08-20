@@ -7,7 +7,10 @@
 <style lang="less">
 // # 选择器权重1，0，0 后面的权重太高无法覆盖
 body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;  //这个作用于全局了

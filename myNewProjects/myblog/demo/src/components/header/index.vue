@@ -6,7 +6,7 @@
         <span>辣鸡查的博客</span>
       </div>
 
-      <div class="list" style="height: 65px">
+      <div class="list">
         <a-menu v-model="current" mode="horizontal" style="line-height: 65px">
           <a-menu-item key="home" @click="toHome">
             <a-icon type="home" />
@@ -43,6 +43,9 @@ export default {
     };
   },
   methods: {
+    handleClick(e) {
+      console.log("click ", e);
+    },
     toHome() {
       this.$router.push({ path: "/" });
     },

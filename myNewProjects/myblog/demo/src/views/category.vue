@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-left:80px; margin-right: 80px">
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -15,11 +15,7 @@
 
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
-        <div class="content">
-          
-分类
-          
-        </div>
+        <div class="content">分类</div>
       </a-col>
     </a-row>
     <!-- <my-articles/>
@@ -42,10 +38,10 @@ export default {
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
-    "my-slider": Slider
+    "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  }
+  },
 };
 </script>
 

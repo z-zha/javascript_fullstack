@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-left:80px; margin-right: 80px">
     <!-- 头部 -->
     <div class="header">
       <my-header />

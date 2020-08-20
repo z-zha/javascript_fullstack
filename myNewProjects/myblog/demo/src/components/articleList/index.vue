@@ -10,7 +10,9 @@
             :bordered="true"
             @click="articleDetail(item.article_id)"
           >
+            <p style="float: right; margin-top: -72px;">{{$store.state.articles[index].add_time.slice(0,10)}}</p>
             <p>{{item.introduce}}</p>
+            
             <template slot="actions" class="ant-card-actions">
               <a-icon type="like" theme="twoTone" />
               <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
@@ -32,6 +34,7 @@ export default {
   data() {
     return {
       loading: true,
+      articles: [],
       // card: [],
     };
   },

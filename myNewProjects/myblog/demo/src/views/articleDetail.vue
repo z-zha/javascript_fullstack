@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-left:80px; margin-right: 80px">
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -15,7 +15,8 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          <div v-html="compiledMarkdown"></div> <!-- v-html的数据是html，marked数据解析成html的格式 -->
+          <!-- v-html的数据是html，marked数据解析成html的格式 -->
+          <div v-html="compiledMarkdown"></div>
         </div>
       </a-col>
     </a-row>
@@ -101,26 +102,20 @@ export default {
 
 <style lang="less" scoped>
 .content {
+  line-height: 40px;
   margin: 50px 200px 120px 20px;
   overflow: hidden;
-}
-pre {
-  display: block;
-  background-color: #f3f3f3;
-  padding: 0.5rem !important;
-  overflow-y: auto;
-  font-weight: 300;
-  font-family: Menlo, monospace;
-  border-radius: 0.3rem;
-}
-pre {
-  background-color: #283646 !important;
-}
-pre > code {
-  border: 0px !important;
-  background-color: #283646 !important;
-  /* background: inherit !important; */
-  color: #fff;
+  /deep/ h1,
+  /deep/ h2,
+  /deep/ h3,
+  /deep/ h4,
+  /deep/ h5,
+  /deep/ h6 {
+    font-weight: bold;
+  }
+  /deep/ p {
+    font-size: 15px;
+  }
 }
 
 /deep/ code {
