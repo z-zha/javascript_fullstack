@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left:80px; margin-right: 80px">
+  <div>
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -32,9 +32,6 @@ import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
 export default {
-  data() {
-    return {};
-  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
@@ -42,26 +39,27 @@ export default {
     // "my-articles": Articles,
     // "my-tags": Tags
   },
+  data() {
+    return {};
+  },
+
+  mounted() {
+    this.$store.state.current = ["2"];
+  },
 };
 </script>
 
 <style lang="less" scoped>
-/* .slider {
-  float: left;
-} */
 /* .content {
   float: right;
   margin-left: 20px;
   margin-top: 20px;
 } */
 .content {
-  margin-left: 40px;
-  margin-top: 50px;
-}
-.blog {
-  height: 150px;
-  overflow: hidden;
-  text-align: left;
+  margin: 50px 200px 120px 80px;
+  // margin-left: 40px;
+  // margin-top: 50px;
+  
 }
 /*  ！important 无穷大
     行内样式   1 0 0 0

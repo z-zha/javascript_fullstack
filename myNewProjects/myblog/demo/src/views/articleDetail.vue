@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left:80px; margin-right: 80px">
+  <div>
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -53,23 +53,38 @@ marked.setOptions({
 });
 
 export default {
-  data() {
-    return {
-      article: "",
-      id: "",
-    };
-  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
     "my-slider": Slider,
   },
-  // watch: {
-  //   $route() {
-  //     this.id = this.$route.query.content
-  //     this.getArticleById()
-  //   }
-  // },
+  data() {
+    return {
+      article: "",
+      id: "",
+      loading: true,
+    };
+  },
+  methods: {
+    getArticleById() {
+      //使用data中的id作为参数调用get请求，发送给后端
+      get(`/getArticleById?id=${this.id}`).then(res => {
+        // console.log(res, "res");
+        // console.log(3333)
+        this.article = res.data[0].content;
+        this.loding = false;
+      });
+    },
+  },
+  mounted() {
+    // this.$store.state.current = ["1"];
+
+    this.id = this.$route.query.content; //获取路由传递的参数，并保存在data中
+    console.log(this.id);
+    this.getArticleById();
+    // this.http();
+    // this.getData();
+  },
   computed: {
     compiledMarkdown() {
       let detail = this.article;
@@ -78,24 +93,11 @@ export default {
       });
     },
   },
-
-  mounted() {
-    this.id = this.$route.query.content; //获取路由传递的参数，并保存在data中
-    console.log(this.id);
-    this.getArticleById();
-    // this.http();
-    // this.getData();
-  },
-  methods: {
-    getArticleById() {
-      //使用data中的id作为参数调用get请求，发送给后端
-      get(`/getArticleById?id=${this.id}`).then((res) => {
-        // console.log(res, "res");
-        // console.log(3333)
-        this.article = res.data[0].content;
-        this.loding = false;
-      });
-    },
+  watch: {
+    $route() {
+      this.id = this.$route.query.content
+      this.getArticleById()
+    }
   },
 };
 </script>
@@ -103,7 +105,7 @@ export default {
 <style lang="less" scoped>
 .content {
   line-height: 40px;
-  margin: 50px 200px 120px 20px;
+  margin: 50px 200px 120px 80px;
   overflow: hidden;
   /deep/ h1,
   /deep/ h2,

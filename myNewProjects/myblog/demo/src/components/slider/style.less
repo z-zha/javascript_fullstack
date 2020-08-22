@@ -1,6 +1,8 @@
 .content {
   border-right: 1px solid gainsboro;
   // margin-left: 100px;
+  width: 350px;
+  margin-left: 20px;
 }
 // 头像样式
 .avatar {
@@ -39,19 +41,26 @@
   margin-right: 20px;
   // width: 300px;
 }
-.list ul {
-  list-style: none;
-  text-align: left;
-  line-height: 30px;
-  font-size: 14px;
-}
-.list a {
-  color: #eb2f96;
-}
+.list
+{
+  ul {
+    list-style: none;
+    text-align: left;
+    line-height: 30px;
+    font-size: 16px;
+    li {
+      color: rgb(236, 143, 159);
+    }
+    li:hover {
+      cursor: pointer;
+      color: #eb2f96;;
+      background-color: #f4f5f5;
+    }
+  }
+} 
 
 // 标签的样式
 .tags {
-  // width: 300px;
   margin-top: 20px;
   margin-right: 20px;  
 }

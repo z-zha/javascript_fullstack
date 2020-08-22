@@ -10,11 +10,23 @@ async function getArticle(ctx) {
   ctx.body = {
     'data': data
   }
-  console.log(data)
+  // console.log(data)
 }
 
 async function getNewestArticle(ctx) {
+  // const newestArticles = await mysql('article_list').orderBy([
+  //   { column: 'add_time', order: 'desc' }
+  // ]).limit(5).select()
+  const newestArticles = await mysql('article_list').orderBy('article_id', 'desc').limit(5).select()
 
+  var dataString = JSON.stringify(newestArticles);
+  var data = JSON.parse(dataString);
+
+  ctx.body = {
+    'data': data
+  }
+
+  console.log(data)
 }
 
 async function getArticleById(ctx) {
@@ -30,7 +42,7 @@ async function getArticleById(ctx) {
   ctx.body = {
     'data': data
   }
-  console.log(data)
+  // console.log(data)
 }
 
 async function getMyMess(ctx) {

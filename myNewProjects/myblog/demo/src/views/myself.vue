@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left:80px; margin-right: 80px">
+  <div>
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -83,16 +83,19 @@ import Slider from "../components/slider";
 // import Articles from "../components/articles"
 // import Tags from "../components/tags"
 export default {
-  data() {
-    return {};
-  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
-    "my-slider": Slider
+    "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  }
+  },
+  data() {
+    return {};
+  },
+  mounted() {
+    this.$store.state.current = ["4"];
+  },
 };
 </script>
 
@@ -106,8 +109,9 @@ export default {
   margin-top: 20px;
 } */
 .content {
-  margin-left: 40px;
-  margin-top: 50px;
+  margin: 50px 200px 120px 80px;
+  // margin-left: 40px;
+  // margin-top: 50px;
 }
 .blog {
   height: 150px;

@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left:80px; margin-right: 80px">
+  <div >
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -16,9 +16,15 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          归档
-
-          
+          <a-timeline pending="Recording..." :reverse="reverse">
+            <a-timeline-item v-for="(item, index) in getarticle" :key="index">
+              <span
+                @click="articleDetail(item.article_id)"
+              >{{getarticle[index].title}}, {{getarticle[index].add_time.slice(0,10)}}</span>
+            </a-timeline-item>
+          </a-timeline>
+          <a-button type="primary" style="margin-top: 16px" @click="handleClick">Toggle Reverse
+          </a-button>
         </div>
       </a-col>
     </a-row>
@@ -33,19 +39,47 @@
 <script>
 import Header from "../components/header"; //导入组件 index.vue可以省略
 import Slider from "../components/slider";
-// import Articles from "../components/articles"
-// import Tags from "../components/tags"
+
+import { get } from "../utils";
+
 export default {
-  data() {
-    return {};
-  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
-    "my-slider": Slider
+    "my-slider": Slider,
     // "my-articles": Articles,
     // "my-tags": Tags
-  }
+  },
+  data() {
+    return {
+      reverse: false,
+      getarticle: [],
+    };
+  },
+
+  methods: {
+    handleClick() {
+      this.reverse = !this.reverse;
+    },
+    getArticle() {
+      get("/getArticle").then((res) => {
+        this.getarticle = res.data;
+      });
+    },
+    articleDetail(id) {
+      this.$router.push({
+        path: "/articleDetail",
+        query: {
+          content: id,
+        },
+      });
+    },
+  },
+
+  mounted() {
+    this.$store.state.current = ["3"];
+    this.getArticle();
+  },
 };
 </script>
 
@@ -59,8 +93,13 @@ export default {
   margin-top: 20px;
 } */
 .content {
-  margin-left: 40px;
-  margin-top: 50px;
+  margin: 50px 200px 120px 80px;
+  // margin-left: 40px;
+  // margin-top: 50px;
+  span {
+    cursor: pointer;
+    color: #eb2f96;
+  }
 }
 .blog {
   height: 150px;

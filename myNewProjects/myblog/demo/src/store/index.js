@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    current: ["1"],
     // selected: '1',
     articles: [],
     // tags: [

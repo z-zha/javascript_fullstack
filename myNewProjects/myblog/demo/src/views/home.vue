@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left:80px; margin-right: 80px">
+  <div>
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -31,19 +31,16 @@ import { get } from "../utils";
 import axios from "axios";
 
 export default {
-  data() {
-    return {
-      loading: true
-    };
-  },
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
     // Header  直接这样子也可以，但是不建议
     "my-slider": Slider,
     "my-articleList": ArticleList
   },
-  mounted() {
-    this.getData();
+  data() {
+    return {
+      loading: true
+    };
   },
   methods: {
     getData() {
@@ -69,21 +66,26 @@ export default {
       // });
     },
   // },
+  mounted() {
+    this.getData();
+  },
+  
 };
 </script>
 
 <style lang='less' scoped>
-.slider {
-  float: left;
-}
+
 /* .content {
   float: left;
   margin-left: 20px;
   margin-top: 20px;
 } */
 .content {
-  margin-left: 40px;
-  margin-top: 50px;
+  margin: 50px 200px 120px 80px;
+  // margin-left: 40px;
+  // margin-top: 50px;
   text-align: left;
+  // margin-right: 40px;
+
 }
 </style>
