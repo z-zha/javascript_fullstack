@@ -15,22 +15,34 @@
 
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
-        <div class="content">分类</div>
+        <div class="content">
+          <div>
+            <a-tag
+              v-for="(item, index) in $store.state.tags"
+              :key="index"
+              color="#2db7f5"
+              @click="toTypeArticles(item.name)"
+            >{{item.name}}</a-tag>
+          </div>
+          <!-- <div v-if="!$store.state.category">
+            <a-tag
+              v-for="(item, index) in $store.state.tags"
+              :key="index"
+              color="#2db7f5"
+            >{{item.tags}}</a-tag>
+          </div> -->
+        </div>
       </a-col>
     </a-row>
-    <!-- <my-articles/>
-    <my-tags/>
-    <div class="title">
-      aaahahahhah
-    </div>-->
   </div>
 </template>
 
 <script>
 import Header from "../components/header"; //导入组件 index.vue可以省略
 import Slider from "../components/slider";
-// import Articles from "../components/articles"
-// import Tags from "../components/tags"
+
+import { get } from "../utils";
+
 export default {
   components: {
     "my-header": Header, //引号是别名 后面是import导入的名字  vue建议组件命名要"-"连接，所以取别名加-
@@ -40,7 +52,19 @@ export default {
     // "my-tags": Tags
   },
   data() {
-    return {};
+    return {
+
+    };
+  },
+  methods: {
+    toTypeArticles(category) {
+      this.$store.state.category = false
+       get(`/getArticleByType?type=${category}`).then(res => {
+        const data = res.data
+        console.log(data);
+        this.$store.state.articles = data
+      });
+    }
   },
 
   mounted() {
@@ -59,7 +83,6 @@ export default {
   margin: 50px 200px 120px 80px;
   // margin-left: 40px;
   // margin-top: 50px;
-  
 }
 /*  ！important 无穷大
     行内样式   1 0 0 0

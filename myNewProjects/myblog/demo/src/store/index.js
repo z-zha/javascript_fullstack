@@ -8,20 +8,19 @@ export default new Vuex.Store({
     current: ["1"],
     // selected: '1',
     articles: [],
-    // tags: [
-    //   { name: "CSS",  },
-    //   { name: "JavaScript" },
-    //   { name: "http"},
-    //   { name: "html"  },
-    //   { name: "前端"  },
-    //   { name: "阅读"  },
-    //   { name: "axios" },
-    //   { name: "koa" },
-    //   { name: "mysql" },
-    //   { name: "vue"},
-    // ],
+    tags: [
+      { name: "CSS",  },
+      { name: "JavaScript" },
+      { name: "HTTP"},
+      { name: "HTML"  },
+      { name: "前端"  },
+      { name: "随笔"  },
+      { name: "axios" },
+      { name: "Vue.js"},
+      {name: "其他"}
+    ],
     // type: ['','success','info','warning','danger'],
-    // category: true
+    category: true
   },
   mutations: {
   },

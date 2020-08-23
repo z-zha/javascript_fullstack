@@ -10,14 +10,17 @@
             :bordered="true"
             @click="articleDetail(item.article_id)"
           >
-            <p style="float: right; margin-top: -72px;">{{$store.state.articles[index].add_time.slice(0,10)}}</p>
+            <p
+              style="float: right; margin-top: -72px;"
+            >{{$store.state.articles[index].add_time.slice(0,10)}}</p>
             <p>{{item.introduce}}</p>
-            
+
             <template slot="actions" class="ant-card-actions">
               <a-icon type="like" theme="twoTone" />
               <a-icon type="heart" theme="twoTone" two-tone-color="#eb2f96" />
               <a-icon type="message" theme="twoTone" two-tone-color="#52c41a" />
             </template>
+            <a-tag color="#2db7f5">{{$store.state.articles[index].category}}</a-tag>
           </a-card>
         </a-col>
       </a-row>

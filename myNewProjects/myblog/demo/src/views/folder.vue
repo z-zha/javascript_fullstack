@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <!-- 头部 -->
     <div class="header">
       <my-header />
@@ -16,23 +16,17 @@
       <!-- 内容 -->
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
-          <a-timeline pending="Recording..." :reverse="reverse">
+          <a-timeline pending="持续记录中..." :reverse="reverse">
             <a-timeline-item v-for="(item, index) in getarticle" :key="index">
               <span
                 @click="articleDetail(item.article_id)"
               >{{getarticle[index].title}}, {{getarticle[index].add_time.slice(0,10)}}</span>
             </a-timeline-item>
           </a-timeline>
-          <a-button type="primary" style="margin-top: 16px" @click="handleClick">Toggle Reverse
-          </a-button>
+          <a-button type="primary" style="margin-top: 16px" @click="handleClick">Toggle Reverse</a-button>
         </div>
       </a-col>
     </a-row>
-    <!-- <my-articles/>
-    <my-tags/>
-    <div class="title">
-      aaahahahhah
-    </div>-->
   </div>
 </template>
 
@@ -97,6 +91,11 @@ export default {
   // margin-left: 40px;
   // margin-top: 50px;
   span {
+    // cursor: pointer;
+    color: rgb(236, 143, 159);
+    font-size: 16px;
+  }
+  span:hover {
     cursor: pointer;
     color: #eb2f96;
   }
