@@ -6,7 +6,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     current: ["1"],
-    // selected: '1',
     articles: [],
     tags: [
       { name: "CSS",  },
@@ -16,6 +15,7 @@ export default new Vuex.Store({
       { name: "前端"  },
       { name: "随笔"  },
       { name: "axios" },
+      { name: "git" },
       { name: "Vue.js"},
       {name: "其他"}
     ],

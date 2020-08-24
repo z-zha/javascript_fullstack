@@ -26,7 +26,7 @@ async function getNewestArticle(ctx) {
     'data': data
   }
 
-  console.log(data)
+  // console.log(data)
 }
 
 async function getArticleById(ctx) {
@@ -45,6 +45,19 @@ async function getArticleById(ctx) {
   // console.log(data)
 }
 
+// 归档页，按照文章添加日期从大到小，倒序
+async function getArticleByDate(ctx) {
+  const cardData = await mysql('article_list').orderBy('article_id', 'asc').select()
+
+  var dataString = JSON.stringify(cardData);
+  var data = JSON.parse(dataString);
+
+  ctx.body = {
+    'data': data
+  }
+  // console.log(data)
+}
+
 async function getMyMess(ctx) {
 
 }
@@ -54,7 +67,7 @@ async function getArticleByType(ctx) {
 
   const typeData = await mysql("article_list").where({
     'category': type
-  }).select()
+  }).orderBy('article_id', 'desc').select()
 
   var dataString = JSON.stringify(typeData);
   var data = JSON.parse(dataString);
@@ -62,13 +75,14 @@ async function getArticleByType(ctx) {
   ctx.body = {
     'data': data
   }
-
+// console.log(data)
 }
 
 module.exports = {
   getArticle,
   getNewestArticle,
   getArticleById,
+  getArticleByDate,
   getMyMess,
   getArticleByType
 }

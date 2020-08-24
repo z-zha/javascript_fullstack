@@ -17,10 +17,10 @@
       <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19">
         <div class="content">
           <a-timeline pending="持续记录中..." :reverse="reverse">
-            <a-timeline-item v-for="(item, index) in getarticle" :key="index">
+            <a-timeline-item v-for="(item, index) in getarticlebydate" :key="index">
               <span
                 @click="articleDetail(item.article_id)"
-              >{{getarticle[index].title}}, {{getarticle[index].add_time.slice(0,10)}}</span>
+              >{{getarticlebydate[index].title}}, {{getarticlebydate[index].add_time.slice(0,10)}}</span>
             </a-timeline-item>
           </a-timeline>
           <a-button type="primary" style="margin-top: 16px" @click="handleClick">Toggle Reverse</a-button>
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       reverse: false,
-      getarticle: [],
+      getarticlebydate: [],
     };
   },
 
@@ -55,9 +55,14 @@ export default {
     handleClick() {
       this.reverse = !this.reverse;
     },
-    getArticle() {
-      get("/getArticle").then((res) => {
-        this.getarticle = res.data;
+    // getArticle() {
+    //   get("/getArticle").then((res) => {
+    //     this.getarticle = res.data;
+    //   });
+    // },
+    getArticleByDate() {
+      get("/getArticleByDate").then((res) => {
+        this.getarticlebydate = res.data;
       });
     },
     articleDetail(id) {
@@ -72,7 +77,7 @@ export default {
 
   mounted() {
     this.$store.state.current = ["3"];
-    this.getArticle();
+    this.getArticleByDate();
   },
 };
 </script>
@@ -136,26 +141,4 @@ export default {
     line-height: 40px;
   }
 }
-/* .back span, .web span {
-  c
-} */
-/* .blog span,
-.blog p {
-  float: left;
-}  */
-/* .web,
-.back {
-  float: left;
-} */
-/* .web {
-  display: table;
-} */
-/* .web span,
-.back span {
-  font-weight: bold;
-  font-size: 20px;
-}
-.web p .back p {
-  line-height: 29.6px;
-} */
 </style>

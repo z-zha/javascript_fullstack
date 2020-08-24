@@ -44,8 +44,7 @@ export default {
   },
   methods: {
     getData() {
-       get("/getarticle")
-       .then((res) => {
+       get("/getarticle").then((res) => {
         console.log(res);
         const data = res.data;
         this.$store.state.articles = data;

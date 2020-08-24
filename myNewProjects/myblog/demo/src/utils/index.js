@@ -1,5 +1,7 @@
-import axios from 'axios' 
-const host = "http://localhost:5757"    //自定义请求前缀 ？？？5757
+import axios from 'axios'
+
+// 请求封装 
+const host = "http://www.codstu.cn:4000"   
 
 export function get(url, data) {      //传入axios请求需要的参数
   return new Promise((resolve,reject) => {

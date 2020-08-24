@@ -25,7 +25,7 @@
 
             <div class="web">
               <span>博客前端：</span>
-              <p>vue + vuex + vue-router + antd</p>
+              <p>vue + vuex + vue-router + antd + axios + highlight.js + maked.js</p>
             </div>
 
             <div class="back">
@@ -56,11 +56,11 @@
                 <a-descriptions-item label="技术栈">
                   <span>前端：HTML/CSS，JavaScript， vue，mpvue， 微信小程序</span>
                   <br />
-                  <span>后端：Koa2，egg.js，node</span>
+                  <span>后端：Koa2，node</span>
                   <br />
                   <span>数据库： mysql</span>
                   <br />
-                  <span>工具： git,，postman，Easy mock</span>
+                  <span>工具： git，postman，Easy mock</span>
                   <br />
                 </a-descriptions-item>
               </a-descriptions>

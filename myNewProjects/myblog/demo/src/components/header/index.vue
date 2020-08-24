@@ -57,6 +57,7 @@ export default {
     },
     toCategory() {
       this.$router.push({ path: "/category" });
+      this.$store.state.category = true;
     },
     toFolder() {
       this.$router.push({ path: "/folder" });
